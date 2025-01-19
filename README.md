@@ -3,8 +3,7 @@
 <h1 style="color: #3498db;">mongodb-atlas-sdk</h1>
 <a href="https://github.com/shivarm/mongodb-atlas-sdk/actions/workflows/ci.yml"><img alt="Node.js CI" src="https://github.com/shivarm/mongodb-atlas-sdk/actions/workflows/ci.yml/badge.svg"></a>
 <a href="https://www.npmjs.com/package/mongodb-atlas-sdk"><img alt="npm version" src="https://img.shields.io/npm/v/mongodb-atlas-sdk"></a>
-<a href="https://github.com/shivarm/mongodb-atlas-sdk/issues"><img alt="GitHub issues" src="https://img.shields.io/github/issues/https://github.com/shivarm/mongodb-atlas-sdk"></a>
-<a href="./LICENSE"><img alt="GitHub license" src="https://img.shields.io/github/license/shivarm/mongodb-atlas-sdk"></a>
+<a href="https://github.com/shivarm/mongodb-atlas-sdk/issues"><img alt="GitHub issues" src="https://img.shields.io/github/issues/shivarm/mongodb-atlas-sdk"></a>
  
 </div>
 
