@@ -36,7 +36,9 @@ jobs:
         run: pnpm run ci
 
       - name: Run tests
+        env:
+          DB_URI: ${{ secrets.DB_URI }}
         run: pnpm run test
 
       - name: Build
-        run: pnpm run build --if-present
+        run: pnpm run build
