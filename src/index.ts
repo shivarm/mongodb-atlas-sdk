@@ -1,2 +1,2 @@
-export { MongoDbConnection } from './core/connection';
-export { userSchema, userValidator, SchemaValidator } from './utils/schema-validation';
+export * from './core/connection.js';
+export * from './utils/schema-validation.js';

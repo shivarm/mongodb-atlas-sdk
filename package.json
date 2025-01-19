@@ -1,9 +1,7 @@
 {
   "name": "mongodb-atlas-sdk",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "mongodb-atlas-sdk is a modern, TypeScript-based SDK designed to simplify and supercharge your interaction with MongoDB Atlas.",
-  "main": "./dist/index.mjs",
-  "types": "./dist/index.d.mts",
   "scripts": {
     "build": "tsup",
     "dev": "tsup src/index.ts --watch",
@@ -23,10 +21,13 @@
     "sdk",
     "typescript"
   ],
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "exports": {
+    "./package.json": "./package.json",
     ".": {
-      "import": "./dist/index.mjs",
-      "types": "./dist/index.d.mts"
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
     }
   },
   "homepage": "https://github.com/shivarm/mongodb-atlas-sdk",
