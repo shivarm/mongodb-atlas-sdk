@@ -1,15 +1,14 @@
 <div align="center">
 
-<h1 style="color: #3498db;">mongodb-atlas-sdk</h1>
+<img src="./assets/mongo-sm.png" alt="">
+
 <a href="https://github.com/shivarm/mongodb-atlas-sdk/actions/workflows/ci.yml"><img alt="Node.js CI" src="https://github.com/shivarm/mongodb-atlas-sdk/actions/workflows/ci.yml/badge.svg"></a>
 <a href="https://www.npmjs.com/package/mongodb-atlas-sdk"><img alt="npm version" src="https://img.shields.io/npm/v/mongodb-atlas-sdk"></a>
 <a href="https://github.com/shivarm/mongodb-atlas-sdk/issues"><img alt="GitHub issues" src="https://img.shields.io/github/issues/shivarm/mongodb-atlas-sdk"></a>
- 
+
 </div>
 
-<br/>
-
-mongodb-atlas-sdk is a modern, TypeScript-based SDK designed to simplify and supercharge your interaction with MongoDB Atlas. Built with scalability, ease of use, and extensibility in mind, mongodb-atlas-sdk is the perfect solution for developers who need a flexible and robust tool to handle their database operations.
+**mongodb-atlas-sdk** is a modern, TypeScript-based SDK designed to simplify and supercharge your interaction with MongoDB Atlas. Built with scalability, ease of use, and extensibility in mind, mongodb-atlas-sdk is the perfect solution for developers who need a flexible and robust tool to handle their database operations.
 
 ## Why mongodb-atlas-sdk?
 
@@ -60,8 +59,8 @@ main().catch(console.error);
 - `getDatabase(name: string): Db`
   Returns a database instance for the given name.
 
-`disconnect(): Promise<void>`
-Disconnects from the MongoDB server.
+- `disconnect(): Promise<void>`
+  Disconnects from the MongoDB server.
 
 ## Custom Schema
 
