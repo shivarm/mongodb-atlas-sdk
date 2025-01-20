@@ -41,8 +41,8 @@ yarn add mongodb-atlas-sdk
 import express from 'express';
 import dotenv from 'dotenv';
 import { MongoDbConnection } from 'mongodb-atlas-sdk';
-
 dotenv.config();
+
 const mongoKit = new MongoDbConnection(process.env.DB_URI!);
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -59,6 +59,9 @@ app.listen(PORT, () => {
 
 - `connect(): Promise<void>`
   Connects to the MongoDB server.
+
+- `reconnect(): Promise<void>`
+  Reconnect if the connection is lost.
 
 - `getDatabase(name: string): Db`
   Returns a database instance for the given name.
