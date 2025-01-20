@@ -33,25 +33,26 @@ yarn add mongodb-atlas-sdk
 ```
 
 > [!IMPORTANT]
-> You can check node/express example [App](./examples/javascript)
+> You can check Node.js/Express.js example [Application](./examples)
 
 ## Usage
 
 ```typescript
+import express from 'express';
+import dotenv from 'dotenv';
 import { MongoDbConnection } from 'mongodb-atlas-sdk';
 
-const mongoConnect = new MongoDbConnection('your-mongodb-uri');
+dotenv.config();
+const mongoKit = new MongoDbConnection(process.env.DB_URI!);
+const app = express();
+const PORT = process.env.PORT || 5000;
 
-async function main() {
-  await mongoConnect.connect();
+app.use(express.json({ limit: '10mb' }));
 
-  const db = mongoConnect.getDatabase('my-database');
-  console.log('Database connected:', db.databaseName);
-
-  await mongoConnect.disconnect();
-}
-
-main().catch(console.error);
+app.listen(PORT, () => {
+  console.log('Server is running on http://localhost:' + PORT);
+  mongoKit.connect();
+});
 ```
 
 ## Methods
@@ -67,25 +68,35 @@ main().catch(console.error);
 
 ## Custom Schema
 
-You can create custom schemas with Zod.
+You can create your custom schemas with Zod.
 
 ```typescript
-import { z, SchemaValidator } from 'mongodb-atlas-sdk';
+import { z } from 'zod';
+import { SchemaValidator } from 'mongodb-atlas-sdk';
 
+// Define a custom schema
 const productSchema = z.object({
+  id: z.string().uuid('Invalid product ID'),
   name: z.string().min(1, 'Product name is required'),
   price: z.number().min(0, 'Price must be non-negative'),
 });
 
+// Create a validator for the custom schema
 const productValidator = new SchemaValidator(productSchema);
 
-const product = { name: 'Laptop', price: 999 };
+// Example data to validate
+const productData = {
+  id: '123e4567-e89b-12d3-a456-426614174000',
+  name: 'Example Product',
+  price: 19.99,
+};
 
 try {
-  const validatedProduct = productValidator.validate(product);
+  // Validate the data
+  const validatedProduct = productValidator.validate(productData);
   console.log('Validated product:', validatedProduct);
 } catch (error) {
-  console.error('Validation failed:', error.message);
+  console.error('Validation error:', error.message);
 }
 ```
 
