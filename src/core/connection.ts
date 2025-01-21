@@ -1,4 +1,6 @@
 import { MongoClient, Db } from 'mongodb';
+import { logger } from '../logger.js';
+import ora from 'ora';
 
 export class MongoDbConnection {
   private client: MongoClient;
@@ -12,12 +14,14 @@ export class MongoDbConnection {
   }
 
   async connect(): Promise<void> {
+    const spinner = ora('Connecting to MongoDB Atlas..').start();
     try {
       await this.client.connect();
       this.isConnected = true;
-      console.log('Connected to MongoDB Atlas');
+      spinner.stop();
+      logger.info('Connected to MongoDB Atlas');
     } catch (error) {
-      console.log('Error connection to MongoDB Atlas', error);
+      logger.error('Error connection to MongoDB Atlas', error);
       this.isConnected = false;
     }
   }
@@ -31,18 +35,22 @@ export class MongoDbConnection {
   }
 
   async disconnect(): Promise<void> {
+    const spinner = ora('Disconnecting to MongoDB Atlas..').start();
     try {
       await this.client.close();
       this.isConnected = false;
-      console.log('Disconnected from MongoDB Atlas');
+      spinner.stop();
+      logger.info('Disconnected from MongoDB Atlas');
     } catch (error) {
-      console.error('Error disconnecting from MongoDB Atlas:', error);
+      logger.error('Error disconnecting from MongoDB Atlas:', error);
     }
   }
 
   async reconnect(): Promise<void> {
+    const spinner = ora('Reconnecting to MongoDB Atlas..').start();
     if (!this.isConnected) {
-      console.log('Reconnection to MongoDB Atlas...');
+      spinner.stop();
+      logger.info('Reconnection to MongoDB Atlas...');
     }
   }
 }
