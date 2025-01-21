@@ -1,4 +1,4 @@
-import { MongoClient, Db } from 'mongodb';
+import { MongoClient, Db, MongoClientOptions } from 'mongodb';
 import { logger } from '../logger.js';
 import ora from 'ora';
 
@@ -7,8 +7,11 @@ export class MongoDbConnection {
   private database: Map<string, Db>;
   private isConnected: boolean;
 
-  constructor(private uri: string) {
-    this.client = new MongoClient(uri);
+  constructor(
+    private uri: string,
+    private options?: MongoClientOptions,
+  ) {
+    this.client = new MongoClient(uri, options);
     this.database = new Map();
     this.isConnected = false;
   }
