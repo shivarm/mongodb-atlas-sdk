@@ -31,7 +31,7 @@
       "require": "./dist/index.cjs"
     }
   },
-  "homepage": "https://github.com/shivarm/mongodb-atlas-sdk",
+  "homepage": "https://shivarm.github.io/mongodb-atlas-sdk/",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/shivarm/mongodb-atlas-sdk.git"

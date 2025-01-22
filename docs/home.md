@@ -1,10 +1,6 @@
 <div align="center">
 
-<img src="./assets/mongo-sm.png" alt="">
-
-<a href="https://github.com/shivarm/mongodb-atlas-sdk/actions/workflows/ci.yml"><img alt="Node.js CI" src="https://github.com/shivarm/mongodb-atlas-sdk/actions/workflows/ci.yml/badge.svg"></a>
-<a href="https://www.npmjs.com/package/mongodb-atlas-sdk"><img alt="npm version" src="https://img.shields.io/npm/v/mongodb-atlas-sdk"></a>
-<a href="https://github.com/shivarm/mongodb-atlas-sdk/issues"><img alt="GitHub issues" src="https://img.shields.io/github/issues/shivarm/mongodb-atlas-sdk"></a>
+<img src="./mongo-sm.png" alt="">
 
 </div>
 
@@ -26,15 +22,18 @@ Install mongokit using npm, pnpm or yarn:
 
 ```bash
 npm install mongodb-atlas-sdk
+```
 
+```bash
 pnpm add mongodb-atlas-sdk
+```
 
+```bash
 yarn add mongodb-atlas-sdk
 ```
 
-## Documentation
-
-- [General documentation](https://shivarm.github.io/mongodb-atlas-sdk/)
+> [!IMPORTANT]
+> You can check Node.js/Express.js example [Application](./examples)
 
 ## Development
 
@@ -42,8 +41,10 @@ See our [Contributing Guide](./CONTRIBUTING.md).
 
 ## Support
 
-- Give a ⭐️ if this project helped you!
 - You can also sponsor me on [Github](https://github.com/sponsors/shivarm)
 
-> [!IMPORTANT]
-> You can check Node.js/Express.js example [Application](./examples)
+<div align="center">
+    <h3>Don't forget to ⭐ this repo</h3>
+    <h4>Building with the COMMUNITY for the COMMUNITY ❤️</h4>
+      <p>Check out the <a href="https://github.com/sponsors/shivarm/graphs/contributors">full list of contributors</a> who helped make this project awesome.</p>
+</div>
