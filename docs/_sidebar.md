@@ -9,6 +9,7 @@
 <summary>How to Use</summary>
 
 - [Connect to MongoDB Atlas](./guide/connection.md)
+- [Custom Schema](./guide/schema.md)
 
 </details>
 

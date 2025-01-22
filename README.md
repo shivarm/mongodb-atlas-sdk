@@ -4,6 +4,7 @@
 
 <a href="https://github.com/shivarm/mongodb-atlas-sdk/actions/workflows/ci.yml"><img alt="Node.js CI" src="https://github.com/shivarm/mongodb-atlas-sdk/actions/workflows/ci.yml/badge.svg"></a>
 <a href="https://www.npmjs.com/package/mongodb-atlas-sdk"><img alt="npm version" src="https://img.shields.io/npm/v/mongodb-atlas-sdk"></a>
+<a href="./LICENSE"><img alt="GitHub license" src="https://img.shields.io/github/license/shivarm/mongodb-atlas-sdk"></a>
 <a href="https://github.com/shivarm/mongodb-atlas-sdk/issues"><img alt="GitHub issues" src="https://img.shields.io/github/issues/shivarm/mongodb-atlas-sdk"></a>
 
 </div>
@@ -34,7 +35,9 @@ yarn add mongodb-atlas-sdk
 
 ## Documentation
 
-- [General documentation](https://shivarm.github.io/mongodb-atlas-sdk/)
+You can find the complete documentation at the following links:
+
+- [Documentation](https://shivarm.github.io/mongodb-atlas-sdk/)
 
 ## Development
 
