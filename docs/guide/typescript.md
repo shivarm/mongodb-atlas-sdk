@@ -17,5 +17,5 @@ app.use(express.json({ limit: '10mb' }));
 app.listen(PORT, () => {
   console.log('Server is running on http://localhost:' + PORT);
   mongoKit.connect();
-})
+});
 ```
