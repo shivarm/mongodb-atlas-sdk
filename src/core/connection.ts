@@ -1,52 +1,34 @@
-import { MongoClient, Db, MongoClientOptions } from 'mongodb';
+import mongoose, { ConnectOptions } from 'mongoose';
 import { logger } from '../logger.js';
 
 export class MongoDbConnection {
-  private client: MongoClient;
-  private database: Map<string, Db>;
-  private isConnected: boolean;
+  private uri: string;
+  private options?: ConnectOptions;
 
-  constructor(
-    private uri: string,
-    private options?: MongoClientOptions,
-  ) {
-    this.client = new MongoClient(uri, { ...options, serverSelectionTimeoutMS: 300000 });
-    this.database = new Map();
-    this.isConnected = false;
+  constructor(uri: string, options?: ConnectOptions) {
+    this.uri = uri;
+    this.options = options;
   }
 
   async connect(): Promise<void> {
     try {
-      await this.client.connect();
-      this.isConnected = true;
+      await mongoose.connect(this.uri, {
+        ...this.options,
+        serverSelectionTimeoutMS: 30000,
+      });
+
       logger.info('Connected to MongoDB Atlas');
     } catch (error) {
       logger.error('Error connection to MongoDB Atlas', error);
-      this.isConnected = false;
     }
-  }
-
-  getDatabaseName(name: string): Db {
-    if (!this.database.has(name)) {
-      const db = this.client.db(name);
-      this.database.set(name, db);
-    }
-    return this.database.get(name) as Db;
   }
 
   async disconnect(): Promise<void> {
     try {
-      await this.client.close();
-      this.isConnected = false;
+      await mongoose.disconnect();
       logger.info('Disconnected from MongoDB Atlas');
     } catch (error) {
       logger.error('Error disconnecting from MongoDB Atlas:', error);
-    }
-  }
-
-  async reconnect(): Promise<void> {
-    if (!this.isConnected) {
-      logger.info('Reconnection to MongoDB Atlas...');
     }
   }
 }

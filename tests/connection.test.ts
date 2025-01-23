@@ -23,9 +23,4 @@ describe('MongoDbConnection', () => {
   it('should connect to MongoDB Atlas', async () => {
     expect(mongoDbConnect).toBeDefined();
   });
-
-  it('should get a database instance', async () => {
-    const db = mongoDbConnect.getDatabaseName('test-db');
-    expect(db).toBeTruthy();
-  });
 });

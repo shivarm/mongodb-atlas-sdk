@@ -24,14 +24,5 @@ app.listen(PORT, () => {
 
 ## Methods
 
-- `connect(): Promise<void>`
-  Connects to the MongoDB server.
-
-- `reconnect(): Promise<void>`
-  Reconnect if the connection is lost.
-
-- `getDatabase(name: string): Db`
-  Returns a database instance for the given name.
-
 - `disconnect(): Promise<void>`
   Disconnects from the MongoDB server.

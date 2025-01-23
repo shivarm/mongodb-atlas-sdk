@@ -10,9 +10,9 @@ importers:
       dotenv:
         specifier: ^16.4.7
         version: 16.4.7
-      mongodb:
-        specifier: ^6.12.0
-        version: 6.12.0
+      mongoose:
+        specifier: ^8.9.5
+        version: 8.9.5
       pino:
         specifier: ^9.6.0
         version: 9.6.0
@@ -639,6 +639,11 @@ packages:
       { integrity: sha512-34wB/Y7MW7bzjKRjUKTa46I2Z7eV62Rkhva+KkopW7Qvv/OSWBqvkSY7vusOPrNuZcUG3tApvdVgNB8POj3SPw== }
     engines: { node: '>=10' }
 
+  kareem@2.6.3:
+    resolution:
+      { integrity: sha512-C3iHfuGUXK2u8/ipq9LfjFfXFxAZMQJJq7vLS45r3D9Y2xQ/m4S8zaR4zMLFWh9AsNPXmcFfUDhTEO8UIC/V6Q== }
+    engines: { node: '>=12.0.0' }
+
   lilconfig@3.1.3:
     resolution:
       { integrity: sha512-/vlFKAoH5Cgt3Ie+JLhRbwOsCQePABiU3tJ1egGvyQ+33R/vcwM2Zl2QR/LzjsBeItPt3oSVXapn+m4nQDvpzw== }
@@ -718,6 +723,21 @@ packages:
         optional: true
       socks:
         optional: true
+
+  mongoose@8.9.5:
+    resolution:
+      { integrity: sha512-SPhOrgBm0nKV3b+IIHGqpUTOmgVL5Z3OO9AwkFEmvOZznXTvplbomstCnPOGAyungtRXE5pJTgKpKcZTdjeESg== }
+    engines: { node: '>=16.20.1' }
+
+  mpath@0.9.0:
+    resolution:
+      { integrity: sha512-ikJRQTk8hw5DEoFVxHG1Gn9T/xcjtdnOKIU1JTmGjZZlg9LST2mBLmcX3/ICIbgJydT2GOc15RnNy5mHmzfSew== }
+    engines: { node: '>=4.0.0' }
+
+  mquery@5.0.0:
+    resolution:
+      { integrity: sha512-iQMncpmEK8R8ncT8HJGsGc9Dsp8xcgYMVSbs5jgnm1lFHTZqMJTUWTDx1LBO8+mK3tPNZWFLBghQEIOULSTHZg== }
+    engines: { node: '>=14.0.0' }
 
   ms@2.1.3:
     resolution:
@@ -888,6 +908,10 @@ packages:
     resolution:
       { integrity: sha512-7++dFhtcx3353uBaq8DDR4NuxBetBzC7ZQOhmTQInHEd6bSrXdiEyzCvG07Z44UYdLShWUyXt5M/yhz8ekcb1A== }
     engines: { node: '>=8' }
+
+  sift@17.1.3:
+    resolution:
+      { integrity: sha512-Rtlj66/b0ICeFzYTuNvX/EF1igRbbnGSvEyT79McoZa/DeGhMyC5pWKOEsZKnpkqtSeovd5FL/bjHWC3CIIvCQ== }
 
   siginfo@2.0.0:
     resolution:
@@ -1548,6 +1572,8 @@ snapshots:
 
   joycon@3.1.1: {}
 
+  kareem@2.6.3: {}
+
   lilconfig@3.1.3: {}
 
   lines-and-columns@1.2.4: {}
@@ -1584,6 +1610,33 @@ snapshots:
       '@mongodb-js/saslprep': 1.1.9
       bson: 6.10.1
       mongodb-connection-string-url: 3.0.2
+
+  mongoose@8.9.5:
+    dependencies:
+      bson: 6.10.1
+      kareem: 2.6.3
+      mongodb: 6.12.0
+      mpath: 0.9.0
+      mquery: 5.0.0
+      ms: 2.1.3
+      sift: 17.1.3
+    transitivePeerDependencies:
+      - '@aws-sdk/credential-providers'
+      - '@mongodb-js/zstd'
+      - gcp-metadata
+      - kerberos
+      - mongodb-client-encryption
+      - snappy
+      - socks
+      - supports-color
+
+  mpath@0.9.0: {}
+
+  mquery@5.0.0:
+    dependencies:
+      debug: 4.4.0
+    transitivePeerDependencies:
+      - supports-color
 
   ms@2.1.3: {}
 
@@ -1723,6 +1776,8 @@ snapshots:
       shebang-regex: 3.0.0
 
   shebang-regex@3.0.0: {}
+
+  sift@17.1.3: {}
 
   siginfo@2.0.0: {}
 
