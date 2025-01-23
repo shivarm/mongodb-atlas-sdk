@@ -9,7 +9,8 @@
 <summary>How to Use</summary>
 
 - [Connect to MongoDB Atlas](./guide/connection.md)
-- [Schema and Model](./guide/schema.md)
+- [Create Schema and Model](./guide/schema.md)
+- [Connection Pooling](./guide/connection-pool.md)
 
 </details>
 
