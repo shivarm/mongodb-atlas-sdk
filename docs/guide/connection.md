@@ -2,7 +2,7 @@
 
 You can you import `MongoDbConnection` class from the package and you will be able to use `connect()` method, as you can see the following example:
 
-```javascript
+```typescript
 import express from 'express';
 import dotenv from 'dotenv';
 import { MongoDbConnection } from 'mongodb-atlas-sdk';
