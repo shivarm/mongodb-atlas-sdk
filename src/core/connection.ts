@@ -10,7 +10,7 @@ export class MongoDbConnection {
     private uri: string,
     private options?: MongoClientOptions,
   ) {
-    this.client = new MongoClient(uri, options);
+    this.client = new MongoClient(uri, { ...options, serverSelectionTimeoutMS: 300000 });
     this.database = new Map();
     this.isConnected = false;
   }
