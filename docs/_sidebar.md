@@ -17,7 +17,6 @@
 <details open style="margin-left: 20px">
 <summary>Example node/express App</summary>
 
-- [With Javascript](./guide/javascript.md)
-- [With Typescript](./guide/typescript.md)
+- [Backend Application](./guide/typescript.md)
 
 </details>

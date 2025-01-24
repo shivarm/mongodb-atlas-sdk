@@ -19,3 +19,7 @@ app.listen(PORT, () => {
   mongoKit.connect();
 });
 ```
+
+## Example backend application
+
+Check our user CRUD application on [Github](https://github.com/shivarm/mongodb-atlas-sdk/tree/main/examples/typescript)
