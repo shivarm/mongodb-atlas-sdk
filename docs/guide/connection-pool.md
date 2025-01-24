@@ -24,12 +24,5 @@ app.use(express.json({ limit: '10mb' }));
 app.listen(PORT, async () => {
   console.log('Server is running on http://localhost:' + PORT);
   await mongoKit.connect();
-
-  // Example of using reconnect logic
-  setInterval(async () => {
-    if (!mongoKit.getConnectionStatus()) {
-      await mongoKit.reconnect();
-    }
-  }, 60000); // Check every minute
 });
 ```
