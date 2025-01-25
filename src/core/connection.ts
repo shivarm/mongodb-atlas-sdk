@@ -12,6 +12,11 @@ export class MongoDbConnection {
     this.options = options;
     this.maxRetries = mazRetries;
     this.retryInterval = retryInterval;
+
+    mongoose.connection.on('disconnected', () => {
+      logger.warn('MongoDB connection lost. Attempting to reconnect...');
+      this.reconnect();
+    });
   }
 
   async connect(): Promise<void> {
