@@ -1,6 +1,5 @@
 import mongoose, { ConnectOptions } from 'mongoose';
 import { logger } from '../logger.js';
-import { number } from 'zod';
 
 export class MongoDbConnection {
   private uri: string;
