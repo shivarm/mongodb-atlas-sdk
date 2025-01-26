@@ -12,6 +12,7 @@
 - [Create Schema and Model](./guide/schema.md)
 - [Connection Pooling](./guide/connection-pool.md)
 - [Query Caching](./guide/queryCaching.md)
+- [Audit Logging](./guide/auditLogging.md)
 
 </details>
 
