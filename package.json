@@ -1,6 +1,6 @@
 {
   "name": "mongodb-atlas-sdk",
-  "version": "1.5.10",
+  "version": "1.6.10",
   "description": "mongodb-atlas-sdk is a modern, TypeScript-based SDK designed to simplify and supercharge your interaction with MongoDB Atlas.",
   "scripts": {
     "build": "tsup",
