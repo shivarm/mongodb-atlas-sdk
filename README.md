@@ -13,11 +13,12 @@
 
 ## Why mongodb-atlas-sdk?
 
-Unlike other MongoDB SDKs, MongoKit focuses on developer productivity, scalability, and modern application needs. Whether you’re building a high-performance REST API, a real-time app, or a distributed system, mongodb-atlas-sdk is here to empower your database operations.
+Unlike other MongoDB SDKs, `mongodb-atlas-sdk` focuses on developer productivity, scalability, and modern application needs. Whether you’re building a high-performance REST API, a real-time app, data backup or a distributed system, `mongodb-atlas-sdk` is here to empower your database operations.
 
 ## Key Features
 
 - Easy MongoDB Atlas Connection: Establish secure and reliable connections with MongoDB Atlas using simple configuration.
+- Backup and Restore: Effortlessly backup and restore your MongoDB collections with our built-in methods.
 - Schema Validation: Ensure data integrity with JSON schema validation powered by Zod.
 - TypeScript-First: Enjoy fully typed APIs for improved developer experience and better code quality.
 
