@@ -13,6 +13,7 @@
 - [Connection Pooling](./guide/connection-pool.md)
 - [Query Caching](./guide/queryCaching.md)
 - [Audit Logging](./guide/auditLogging.md)
+- [Backup and Restore](./guide/backup.md)
 
 </details>
 
