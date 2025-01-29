@@ -1,16 +1,22 @@
 import { Schema } from 'mongoose';
-import { createClient } from '@redis/client';
 import { logger } from '../logger.js';
+import { initializeRedis, getRedisClient, isRedisConnected } from '../utils/redisClient.js';
 
-const redisClient = createClient();
+export function queryCachingPlugin(
+  schema: Schema,
+  options: { cacheKeyPrefix?: string; defaultTTL?: number } = { cacheKeyPrefix: 'cache:', defaultTTL: 60 },
+) {
+  const { cacheKeyPrefix, defaultTTL } = options;
 
-redisClient.connect().catch((error) => {
-  logger.error('Failed to connect to Redis:', error);
-});
+  schema.statics.cache = async function (key: string, query: any, ttl: number = defaultTTL || 60) {
+    await initializeRedis();
+    if (!isRedisConnected()) {
+      logger.warn('Redis is not available. Executing query without caching.');
+      return query.exec();
+    }
 
-export function queryCachingPlugin(schema: Schema, options: { cacheKeyPrefix: string } = { cacheKeyPrefix: 'cache:' }) {
-  schema.statics.cache = async function (key: string, query: any, ttl: number = 60) {
-    const cacheKey = `${options.cacheKeyPrefix}${key}`;
+    const redisClient = getRedisClient();
+    const cacheKey = `${cacheKeyPrefix}${key}`;
     logger.info(`Attempting to retrieve cache for key: ${cacheKey}`);
     const cachedResult = await redisClient.get(cacheKey);
 
@@ -26,7 +32,14 @@ export function queryCachingPlugin(schema: Schema, options: { cacheKeyPrefix: st
   };
 
   schema.statics.clearCache = async function (key: string) {
-    const cacheKey = `${options.cacheKeyPrefix}${key}`;
+    await initializeRedis();
+    if (!isRedisConnected()) {
+      logger.warn('Redis is not available. Cannot clear cache.');
+      return;
+    }
+
+    const redisClient = getRedisClient();
+    const cacheKey = `${cacheKeyPrefix}${key}`;
     await redisClient.del(cacheKey);
     logger.info(`Cache cleared for key: ${cacheKey}`);
   };
