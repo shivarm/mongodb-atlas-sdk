@@ -1,4 +1,4 @@
-import mongoose, { model } from 'mongoose';
+import mongoose from 'mongoose';
 import fs from 'fs/promises';
 import { logger } from '../logger.ts';
 

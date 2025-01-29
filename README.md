@@ -15,39 +15,78 @@
 
 Unlike other MongoDB SDKs, `mongodb-atlas-sdk` focuses on developer productivity, scalability, and modern application needs. Whether you’re building a high-performance REST API, a real-time app, data backup or a distributed system, `mongodb-atlas-sdk` is here to empower your database operations.
 
-## Key Features
+## Table of Contents
 
-- Easy MongoDB Atlas Connection: Establish secure and reliable connections with MongoDB Atlas using simple configuration.
-- Backup and Restore: Effortlessly backup and restore your MongoDB collections with our built-in methods.
-- Schema Validation: Ensure data integrity with JSON schema validation powered by Zod.
-- TypeScript-First: Enjoy fully typed APIs for improved developer experience and better code quality.
+- [Installation](#installation)
+- [Example](#example)
+- [Core Features](#core-features)
+- [Documentation](#documentation)
+- [Development](#development)
+- [Support](#support)
 
 ## Installation
 
-Install mongokit using npm, pnpm or yarn:
+Let's start by installing mongodb-atlas-sdk. You can install it with the following any package manager.
 
 ```bash
 npm install mongodb-atlas-sdk
+```
 
+```bash
 pnpm add mongodb-atlas-sdk
+```
 
+```bash
 yarn add mongodb-atlas-sdk
 ```
 
+## Example
+
+```typescript
+import express from 'express';
+import dotenv from 'dotenv';
+import { MongoDbConnection } from 'mongodb-atlas-sdk';
+import userRoutes from './routes/userRoutes';
+
+dotenv.config();
+
+const mongoKit = new MongoDbConnection(process.env.DB_URI!);
+mongoKit.connect();
+
+const PORT = process.env.PORT || 5000;
+
+const app = express();
+app.use(express.json({ limit: '10mb' }));
+
+app.use('/users', userRoutes);
+
+app.listen(PORT, () => {
+  console.log('Server is running on http://localhost:' + PORT);
+});
+```
+
+## Core Features
+
+- **Easy MongoDB Atlas Connection:** Establish secure and reliable connections with MongoDB Atlas using simple configuration.
+- **Backup and Restore**: Effortlessly backup and restore your MongoDB collections with our built-in methods.
+- **Schema Validation**: Ensure data integrity with JSON schema validation powered by Zod.
+- **TypeScript-First:** Enjoy fully typed APIs for improved developer experience and better code quality.
+
 ## Documentation
 
-You can find the complete documentation at the following links:
-
-- [Documentation](https://shivarm.github.io/mongodb-atlas-sdk/)
+- [Getting Started](https://shivarm.github.io/mongodb-atlas-sdk/#/./guide/installation)
+- [Connect to MongoDB Atlas](https://shivarm.github.io/mongodb-atlas-sdk/#/./guide/connection)
+- [Create Schema and Model](https://shivarm.github.io/mongodb-atlas-sdk/#/./guide/schema)
+- [Connection Pooling](https://shivarm.github.io/mongodb-atlas-sdk/#/./guide/connection-pool)
+- [Query Caching](https://shivarm.github.io/mongodb-atlas-sdk/#/./guide/queryCaching)
+- [Audit Logging](https://shivarm.github.io/mongodb-atlas-sdk/#/./guide/auditLogging)
+- [Backup and Restore](https://shivarm.github.io/mongodb-atlas-sdk/#/./guide/backup)
 
 ## Development
 
-See our [Contributing Guide](./CONTRIBUTING.md).
+Whether reporting bugs, discussing improvements and new ideas or writing code, we welcome contributions from anyone and everyone. Please check our [Contributing Guide](./CONTRIBUTING.md).
 
 ## Support
 
 - Give a ⭐️ if this project helped you!
 - You can also sponsor me on [Github](https://github.com/sponsors/shivarm)
-
-> [!IMPORTANT]
-> You can check Node.js/Express.js example [Application](./examples)
