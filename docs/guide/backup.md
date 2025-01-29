@@ -41,3 +41,15 @@ export const restoreUser = async (req: Request, res: Response) => {
   }
 };
 ```
+
+You can test the backup and restore endpoints using Postman or any other API testing tool. Below is an example of the request body for the backup and restore endpoints. Make sure, in my case backup or your directory exists before running the backup operation.
+
+```json
+{
+  "filePath": "./backup/user_backup.json"
+}
+```
+
+## Example backend application
+
+Check our user CRUD application on [Github](https://github.com/shivarm/mongodb-atlas-sdk/tree/main/examples/typescript)

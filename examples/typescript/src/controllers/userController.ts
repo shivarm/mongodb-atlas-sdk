@@ -1,5 +1,18 @@
 import { Request, Response } from 'express';
 import { User } from '../model/userModel';
+import { Backup } from 'mongodb-atlas-sdk';
+
+const backup = new Backup();
+
+export const backupUser = async (req: Request, res: Response) => {
+  try {
+    const filePath = req.body.filePath;
+    await backup.backupModel(User, filePath);
+    res.status(200).json({ message: 'Backup completed successfully' });
+  } catch (err) {
+    res.status(500).json({ message: 'Failed to backup data' });
+  }
+};
 
 export const createUser = async (req: Request, res: Response) => {
   try {
