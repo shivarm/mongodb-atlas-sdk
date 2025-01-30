@@ -17,12 +17,9 @@ Unlike other MongoDB SDKs, MongoKit focuses on developer productivity, scalabili
 - **Schema Validation**: Ensure data integrity with JSON schema validation powered by Zod.
 - **TypeScript-First:** Enjoy fully typed APIs for improved developer experience and better code quality.
 
-> [!IMPORTANT]
-> You can check Node.js/Express.js example [Application](./examples)
-
 ## Development
 
-See our [Contributing Guide](./CONTRIBUTING.md).
+- See our [Contributing Guide](./CONTRIBUTING.md).
 
 ## Support
 
