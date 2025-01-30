@@ -1,25 +1,27 @@
-## How to use with Typescript ?
-
-You can use the `MongoDbConnection` class from the package and you will be able to use the following methods:
-
-```typescript
-import express from 'express';
-import dotenv from 'dotenv';
-import { MongoDbConnection } from 'mongodb-atlas-sdk';
-dotenv.config();
-
-const mongoKit = new MongoDbConnection(process.env.DB_URI!);
-const app = express();
-const PORT = process.env.PORT || 5000;
-
-app.use(express.json({ limit: '10mb' }));
-
-app.listen(PORT, () => {
-  console.log('Server is running on http://localhost:' + PORT);
-  mongoKit.connect();
-});
-```
-
 ## Example backend application
 
-Check our user CRUD application on [Github](https://github.com/shivarm/mongodb-atlas-sdk/tree/main/examples/typescript)
+This is a simple example of a backend application using the MongoDB Atlas SDK for Node.js. The application is written in TypeScript and uses the Express framework. Check our user CRUD application on [Github](https://github.com/shivarm/mongodb-atlas-sdk/tree/main/examples/typescript)
+
+## Running the Example
+
+You can run the example by following these steps:
+
+Install Dependencies
+
+```bash
+npm install
+```
+
+Set Environment Variables
+Create a `.env` file in the root directory of the project and add the following environment variables:
+
+```env
+DB_URI=
+PORT=5000
+```
+
+Start the Server
+
+```bash
+npm run dev
+```
