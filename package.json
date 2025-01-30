@@ -21,6 +21,8 @@
     "mongodb",
     "atlas",
     "sdk",
+    "backup",
+    "restore",
     "typescript"
   ],
   "main": "dist/index.js",
