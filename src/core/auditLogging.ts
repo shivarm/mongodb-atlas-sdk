@@ -1,7 +1,7 @@
 import { Schema } from 'mongoose';
 import { logger } from '../logger.ts';
 
-export function auditLoggingPlugin(schema: Schema) {
+export function auditLog(schema: Schema) {
   schema.pre('save', function (next) {
     if (this.isNew) {
       logger.info(`Creating new document: ${JSON.stringify(this.toObject())}`);

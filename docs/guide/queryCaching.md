@@ -1,10 +1,10 @@
 ## How to use query caching ?
 
-The `queryCachingPlugin` method is a Mongoose plugin that adds query caching functionality to your Mongoose models using Redis. This plugin helps improve the performance of your application by caching the results of frequently accessed queries, reducing the load on the database, and speeding up response times for your users. Let's see how to use this plugin in your Mongoose models.
+The `queryCache` method that adds query caching functionality to your Mongoose models using Redis. This plugin helps improve the performance of your application by caching the results of frequently accessed queries, reducing the load on the database, and speeding up response times for your users. Let's see how to use this plugin in your Mongoose models.
 
 ```typescript
 import mongoose from 'mongoose';
-import { queryCachingPlugin } from 'mongodb-atlas-sdk';
+import { queryCache } from 'mongodb-atlas-sdk';
 
 const userSchema = new mongoose.Schema({
   name: { type: String, required: true },
@@ -14,7 +14,7 @@ const userSchema = new mongoose.Schema({
 });
 
 // Apply the query caching plugin to the user schema
-userSchema.plugin(queryCachingPlugin);
+userSchema.plugin(queryCache);
 
 export const User = mongoose.model('User', userSchema);
 ```

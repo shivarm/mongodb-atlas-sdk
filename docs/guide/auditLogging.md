@@ -4,7 +4,7 @@ This feature will track changes to documents and log them for auditing purposes.
 
 ```typescript
 import mongoose from 'mongoose';
-import { auditLogging } from 'mongodb-atlas-sdk';
+import { auditLog } from 'mongodb-atlas-sdk';
 
 const userSchema = new mongoose.Schema({
   name: { type: String, required: true },
@@ -14,7 +14,7 @@ const userSchema = new mongoose.Schema({
 });
 
 // Apply the audit logging to the user schema
-userSchema.plugin(auditLogging);
+userSchema.plugin(auditLog);
 
 export const User = mongoose.model('User', userSchema);
 ```
