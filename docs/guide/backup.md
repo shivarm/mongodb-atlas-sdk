@@ -50,6 +50,38 @@ You can test the backup and restore endpoints using Postman or any other API tes
 }
 ```
 
+## Backup with optional fields
+
+You can also pass optional fields to the `backupModel` method. Below is an example of how to backup data from the User model with optional fields.
+
+```typescript
+import { Request, Response } from 'express';
+import { User } from '../model/userModel';
+import { Backup } from 'mongodb-atlas-sdk';
+
+const backup = new Backup();
+
+export const backupUser = async (req: Request, res: Response) => {
+  try {
+    const filePath = req.body.filePath;
+    const fields = req.body.fields; // Get fields from request body
+    await backup.backupModel(User, filePath, { fields });
+    res.status(200).json({ message: 'Backup completed successfully' });
+  } catch (err) {
+    res.status(500).json({ message: 'Failed to backup data' });
+  }
+};
+```
+
+You can test the backup and restore endpoints using Postman or any other API testing tool.
+
+```json
+{
+  "filePath": "./backup/user_backup.json",
+  "fields": ["name", "email"]
+}
+```
+
 ## Example backend application
 
 Check our user CRUD application on [Github](https://github.com/shivarm/mongodb-atlas-sdk/tree/main/examples/typescript)

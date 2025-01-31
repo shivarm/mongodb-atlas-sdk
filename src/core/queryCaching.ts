@@ -2,7 +2,7 @@ import { Schema } from 'mongoose';
 import { logger } from '../logger.js';
 import { initializeRedis, getRedisClient, isRedisConnected } from '../utils/redisClient.js';
 
-export function queryCachingPlugin(
+export function queryCache(
   schema: Schema,
   options: { cacheKeyPrefix?: string; defaultTTL?: number } = { cacheKeyPrefix: 'cache:', defaultTTL: 60 },
 ) {

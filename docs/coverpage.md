@@ -2,7 +2,7 @@
 
 # mongodb-atlas-sdk
 
-> A modern, TypeScript-based SDK designed to simplify and supercharge your interaction with MongoDB Atlas.
+> A modern, SDK designed to simplify and supercharge your interaction with MongoDB Atlas.
 
 - TypeScript-First Enjoy fully typed APIs for improved developer experience and better code quality.
 

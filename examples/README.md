@@ -76,13 +76,8 @@ npm run dev
 
 - **Body**: (JSON)
 
-````json
-{
-  "filePath": "./backup/user_backup.json"
-}
-
 ```json
 {
   "filePath": "./backup/user_backup.json"
 }
-````
+```
