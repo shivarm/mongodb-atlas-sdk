@@ -29,7 +29,7 @@ export class Backup {
   async backupToDB(
     model: mongoose.Model<any>,
     backupModel: mongoose.Model<any>,
-    options: BackupOptions,
+    options: BackupOptions = {},
   ): Promise<void> {
     try {
       const { fields } = options;
@@ -38,8 +38,10 @@ export class Backup {
       const projection = fields ? fields.reduce((acc, field) => ({ ...acc, [field]: 1 }), {}) : {};
       const data = await model.find({}, projection).lean().exec();
 
-      const backup = new backupModel({ collection, data });
-      await backup.save();
+      for (let doc of data) {
+        const backup = new backupModel(doc);
+        await backup.save();
+      }
       logger.info(`Backup of collection ${collection} to database completed successfully.`);
     } catch (error) {
       logger.error(`Failed to backup collection ${backupModel.collection.name} to database: ${error}`);

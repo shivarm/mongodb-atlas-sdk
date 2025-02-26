@@ -11,15 +11,15 @@ import mongoose, { Schema, Document } from 'mongoose';
 
 // Define the IBackup interface
 export interface IBackup extends Document {
-  collection: string;
+  collectionName: string;
   data: any[];
 }
 
 // Define the Mongoose schema for backup
 const backupSchema = new Schema<IBackup>(
   {
-    collection: { type: String, required: true },
-    data: { type: [Schema.Types.Mixed], required: true },
+    collectionName: { type: String },
+    data: { type: Schema.Types.Mixed },
   },
   { timestamps: true },
 );
