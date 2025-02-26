@@ -19,7 +19,6 @@ Unlike other MongoDB SDKs, `mongodb-atlas-sdk` focuses on developer productivity
 
 - [Installation](#installation)
 - [Example](#example)
-- [Core Features](#core-features)
 - [Documentation](#documentation)
 - [Development](#development)
 - [Support](#support)
@@ -48,7 +47,7 @@ import dotenv from 'dotenv';
 import { MongoDbConnection } from 'mongodb-atlas-sdk';
 dotenv.config();
 
-const mongoKit = new MongoDbConnection(process.env.DB_URI!);
+const connectMongo = new MongoDbConnection(process.env.DB_URI!);
 const app = express();
 const PORT = process.env.PORT || 5000;
 
@@ -56,16 +55,9 @@ app.use(express.json({ limit: '10mb' }));
 
 app.listen(PORT, () => {
   console.log('Server is running on http://localhost:' + PORT);
-  mongoKit.connect();
+  connectMongo.connect();
 });
 ```
-
-## Core Features
-
-- **Easy MongoDB Atlas Connection:** Establish secure and reliable connections with MongoDB Atlas.
-- **Backup and Restore**: Effortlessly backup and restore your MongoDB collections with built-in methods.
-- **Schema Validation**: Ensure data integrity with JSON schema validation powered by Zod.
-- **TypeScript-First:** Enjoy fully typed APIs for improved developer experience and better code quality.
 
 ## Documentation
 

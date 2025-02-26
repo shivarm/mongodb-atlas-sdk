@@ -33,7 +33,7 @@ export const UserForm = () => {
         <br />
         <button type="submit">Create User</button>
       </form>
-      {message && <p className='message'>{message}</p>}
+      {message && <p className="message">{message}</p>}
     </div>
   );
 };

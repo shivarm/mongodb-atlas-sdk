@@ -15,7 +15,7 @@ const mongoOptions = {
   maxIdleTimeMS: 30000, // Maximum idle time for a connection in the pool
 };
 
-const mongoKit = new MongoDbConnection(process.env.DB_URI!, mongoOptions);
+const connectMongo = new MongoDbConnection(process.env.DB_URI!, mongoOptions);
 const app = express();
 const PORT = process.env.PORT || 5000;
 
@@ -23,6 +23,6 @@ app.use(express.json({ limit: '10mb' }));
 
 app.listen(PORT, async () => {
   console.log('Server is running on http://localhost:' + PORT);
-  await mongoKit.connect();
+  await connectMongo.connect();
 });
 ```
