@@ -26,6 +26,27 @@ export class Backup {
     }
   }
 
+  async backupToDB(
+    model: mongoose.Model<any>,
+    backupModel: mongoose.Model<any>,
+    options: BackupOptions,
+  ): Promise<void> {
+    try {
+      const { fields } = options;
+      const collection = model.collection.name;
+
+      const projection = fields ? fields.reduce((acc, field) => ({ ...acc, [field]: 1 }), {}) : {};
+      const data = await model.find({}, projection).lean().exec();
+
+      const backup = new backupModel({ collection, data });
+      await backup.save();
+      logger.info(`Backup of collection ${collection} to database completed successfully.`);
+    } catch (error) {
+      logger.error(`Failed to backup collection ${backupModel.collection.name} to database: ${error}`);
+      throw error;
+    }
+  }
+
   async restoreModel(model: mongoose.Model<any>, filePath: string): Promise<void> {
     try {
       const collectionName = model.collection.name;
