@@ -39,7 +39,7 @@ export class Backup {
       const data = await model.find({}, projection).lean().exec();
 
       for (let doc of data) {
-        const backup = new backupModel(doc);
+        const backup = new backupModel({ collection, data: doc });
         await backup.save();
       }
       logger.info(`Backup of collection ${collection} to database completed successfully.`);
