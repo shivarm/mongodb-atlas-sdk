@@ -1,6 +1,6 @@
 {
   "name": "mongodb-atlas-sdk",
-  "version": "2.0.1",
+  "version": "2.1.1",
   "description": "mongodb-atlas-sdk is a modern, TypeScript-based SDK designed to simplify and supercharge your interaction with MongoDB Atlas.",
   "scripts": {
     "docs": "docsify serve docs",
