@@ -15,7 +15,7 @@ app.get('/users', async (req: Request, res: Response) => {
     const page = parseInt(req.query.page as string) || 1;
     const limit = parseInt(req.query.limit as string) || 10;
 
-    const result = await dataPagination.paginateResults(User, page, limit);
+    const result = await dataPagination.paginateResult(User, page, limit);
 
     res.status(200).json(result);
   } catch (err) {
