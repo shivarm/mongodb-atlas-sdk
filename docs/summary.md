@@ -11,10 +11,11 @@
 - [Installation](./guide/installation.md)
 - [Connect to MongoDB Atlas](./guide/connection.md)
 - [Create Schema and Model](./guide/schema.md)
+- [Backup and Restore](./guide/backup.md)
 - [Connection Pooling](./guide/connection-pool.md)
+- [Data Pagination](./guide/pagination.md)
 - [Query Caching](./guide/queryCaching.md)
 - [Audit Logging](./guide/auditLogging.md)
-- [Backup and Restore](./guide/backup.md)
 
 </details>
 
