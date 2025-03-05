@@ -1,7 +1,9 @@
 <div align="center">
 
-<img src="./mongo-sm.png" alt="">
-
+<img src="./mongodb.png" alt="">
+ <span>
+    <h1>mongodb-atlas-sdk</h1>
+ </span>
 </div>
 
 **mongodb-atlas-sdk** is a modern, TypeScript-based SDK designed to simplify and supercharge your interaction with MongoDB Atlas. Built with scalability, ease of use, and extensibility in mind, mongodb-atlas-sdk is the perfect solution for developers who need a flexible and robust tool to handle their database operations.

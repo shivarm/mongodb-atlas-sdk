@@ -6,7 +6,7 @@
 </details>
 
 <details  open  style="margin-left: 20px">
-<summary>How to Use</summary>
+<summary>Getting Started</summary>
 
 - [Installation](./guide/installation.md)
 - [Connect to MongoDB Atlas](./guide/connection.md)
