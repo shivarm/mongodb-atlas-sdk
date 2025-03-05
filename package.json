@@ -13,7 +13,6 @@
   },
   "files": [
     "dist",
-    "src",
     "LICENSE",
     "REDME.md"
   ],
@@ -22,7 +21,9 @@
     "atlas",
     "sdk",
     "backup",
-    "restore",
+    "mongodb-atlas",
+    "mongodb-backup",
+    "pagination",
     "typescript"
   ],
   "main": "dist/index.js",

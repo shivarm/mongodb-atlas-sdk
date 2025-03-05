@@ -14,6 +14,7 @@
 - [Backup and Restore](./guide/backup.md)
 - [Connection Pooling](./guide/connection-pool.md)
 - [Data Pagination](./guide/pagination.md)
+- [Data Aggregation](./guide/dataAggregation.md)
 - [Query Caching](./guide/queryCaching.md)
 - [Audit Logging](./guide/auditLogging.md)
 
