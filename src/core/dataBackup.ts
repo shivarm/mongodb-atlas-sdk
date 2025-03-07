@@ -56,8 +56,10 @@ export class Backup {
       await model.insertMany(data);
       logger.info(`Restore of collection ${collectionName} completed successfully.`);
     } catch (error) {
-      logger.error(`Failed to restore collection ${model.collection.name}: ${error}`);
-      throw error;
+      if (error instanceof Error) {
+        logger.error(`Failed to restore collection ${model.collection.name}: ${error.message}`);
+        throw new Error(`Failed to restore collection ${model.collection.name}: ${error.message}`);
+      }
     }
   }
 }

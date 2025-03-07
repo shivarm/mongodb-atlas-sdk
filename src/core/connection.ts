@@ -28,8 +28,10 @@ export class MongoDbConnection {
 
       logger.info('Connected to MongoDB Atlas');
     } catch (error) {
-      logger.error('Error connection to MongoDB Atlas', error);
-      this.reconnect();
+      if (error instanceof Error) {
+        logger.error('Error connecting to MongoDB Atlas:', error.message);
+        throw new Error(`Error connecting to MongoDB Atlas: ${error.message}`);
+      }
     }
   }
 
@@ -38,7 +40,10 @@ export class MongoDbConnection {
       await mongoose.disconnect();
       logger.info('Disconnected from MongoDB Atlas');
     } catch (error) {
-      logger.error('Error disconnecting from MongoDB Atlas:', error);
+      if (error instanceof Error) {
+        logger.error('Error disconnecting from MongoDB Atlas:', error.message);
+        throw new Error(`Error disconnecting from MongoDB Atlas: ${error.message}`);
+      }
     }
   }
 
@@ -55,8 +60,10 @@ export class MongoDbConnection {
       });
       logger.info('Reconnected to MongoDB Atlas');
     } catch (error) {
-      logger.error(`Reconnect attempt ${attempt} failed. Retrying in ${this.retryInterval / 1000} seconds...`, error);
-      this.reconnect(attempt + 1);
+      if (error instanceof Error) {
+        logger.error(`Reconnect attempt ${attempt} failed: ${error.message}`);
+        this.reconnect(attempt + 1);
+      }
     }
   }
 }
