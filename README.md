@@ -72,6 +72,8 @@ app.listen(PORT, () => {
 - [Audit Logging](https://shivarm.github.io/mongodb-atlas-sdk/#/./guide/auditLogging)
 - [Backup and Restore](https://shivarm.github.io/mongodb-atlas-sdk/#/./guide/backup)
 
+and many more go [here](https://shivarm.github.io/mongodb-atlas-sdk/#/./home)
+
 ## Development
 
 Whether reporting bugs, discussing improvements and new ideas or writing code, we welcome contributions from anyone and everyone. Please check our [Contributing Guide](./CONTRIBUTING.md).

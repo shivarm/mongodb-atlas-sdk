@@ -23,6 +23,6 @@
 <details open style="margin-left: 20px">
 <summary>Example App</summary>
 
-- [Backend Application](./guide/typescript.md)
+- [Full Stack Application](https://github.com/shivarm/mongodb-atlas-sdk/tree/main/examples)
 
 </details>
