@@ -1,14 +1,41 @@
 import mongoose from 'mongoose';
 import { logger } from '../logger.ts';
 
+interface PaginationOptions {
+  page: number;
+  limit: number;
+  sort?: any;
+  select?: any;
+  populate?: any;
+}
+
 export class DataPagination {
-  async paginateResult(model: mongoose.Model<any>, page: number, limit: number, query: any = {}): Promise<any> {
+  async paginateResult(model: mongoose.Model<any>, query: any = {}, options: PaginationOptions): Promise<any> {
+    let { page = 1, limit = 10, sort, select, populate } = options;
+
     if (page < 1) {
       page = 1;
     }
+
     try {
       const skip = (page - 1) * limit;
-      const result = await model.find(query).sort({ createdAt: -1 }).skip(skip).limit(limit).lean().exec();
+      let queryBuilder = model.find(query).skip(skip).limit(limit).lean();
+
+      if (sort) {
+        queryBuilder.sort(sort);
+      } else {
+        queryBuilder = queryBuilder.sort({ createdAt: -1 }); // Default sorting
+      }
+
+      if (select) {
+        queryBuilder = queryBuilder.select(select);
+      }
+
+      if (populate) {
+        queryBuilder = queryBuilder.populate(populate);
+      }
+
+      const result = await queryBuilder.exec();
       const total = await model.countDocuments(query).exec();
 
       return {
