@@ -54,6 +54,10 @@
     "pino-pretty": "^13.0.0",
     "zod": "^3.24.1"
   },
+  "peerDependencies": {
+    "mongoose": "^8.9.5",
+    "@redis/client": "^1.6.0"
+  },
   "devDependencies": {
     "@types/node": "^22.10.7",
     "prettier": "^3.4.2",
