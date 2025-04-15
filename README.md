@@ -12,8 +12,6 @@
 
 </div>
 
-**mongodb-atlas-sdk** is a modern, TypeScript-based SDK designed to simplify and supercharge your interaction with MongoDB Atlas. Built with scalability, ease of use, and extensibility in mind, mongodb-atlas-sdk is the perfect solution for developers who need a flexible and robust tool to handle complex database operations.
-
 ## Why mongodb-atlas-sdk?
 
 Unlike other MongoDB SDKs, `mongodb-atlas-sdk` focuses on developer productivity, scalability, and modern application needs. Whether you’re building a high-performance REST API, a real-time app, data backup or a distributed system, `mongodb-atlas-sdk` is here to empower your database operations.
@@ -72,7 +70,7 @@ app.listen(PORT, () => {
 - [Audit Logging](https://shivarm.github.io/mongodb-atlas-sdk/#/./guide/auditLogging)
 - [Backup and Restore](https://shivarm.github.io/mongodb-atlas-sdk/#/./guide/backup)
 
-and many more go [here](https://shivarm.github.io/mongodb-atlas-sdk/#/./home)
+and many more feature check [Docs](https://shivarm.github.io/mongodb-atlas-sdk/#/./home)
 
 ## Development
 
